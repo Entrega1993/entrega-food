@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import logo from "./logo.png";
 
 export default function HomePage() {
+  const [lang, setLang] = useState("en");
+
+  const t = {
+    en: {
+      title: "Entrega.food",
+      subtitle: "Entrega.food delivers your favorite meals fast — from trusted local restaurants to your door. Fresh, affordable, and always on time.",
+      orderNow: "Order Now",
+      partner: "Partner With Us",
+      driver: "Become a Driver"
+    },
+    es: {
+      title: "Entrega.food",
+      subtitle: "Entrega.food entrega tus comidas favoritas rápido — de restaurantes locales confiables hasta tu puerta. Fresco, económico y siempre puntual.",
+      orderNow: "Ordena Ahora",
+      partner: "Sé un Socio",
+      driver: "Conviértete en Repartidor"
+    }
+  };
+
+  const tr = t[lang];
+
   return (
-    <div className="p-6 text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Entrega.food</h1>
-      <p className="text-lg">This is your custom food delivery website.</p>
+    <div className="min-h-screen bg-white text-gray-900">
+      <header className="flex items-center justify-between px-6 py-4 border-b">
+        <img src={logo} alt="Entrega.food logo" className="h-10" />
+        <select
+          value={lang}
+          onChange={(e) => setLang(e.target.value)}
+          className="border px-2 py-1 rounded"
+        >
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </header>
+
+      <main className="text-center px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{tr.title}</h1>
+        <p className="text-lg max-w-2xl mx-auto mb-8">{tr.subtitle}</p>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <button className="bg-green-600 text-white px-6 py-2 rounded-xl font-semibold shadow">{tr.orderNow}</button>
+          <button className="border border-green-600 text-green-600 px-6 py-2 rounded-xl font-semibold">{tr.partner}</button>
+          <button className="border border-green-600 text-green-600 px-6 py-2 rounded-xl font-semibold">{tr.driver}</button>
+        </div>
+      </main>
+
+      <footer className="text-center text-sm text-gray-500 py-8 border-t">
+        &copy; {new Date().getFullYear()} Entrega.food. All rights reserved.
+      </footer>
     </div>
   );
 }
