@@ -49,6 +49,12 @@ export default function HomePage() {
 
       <footer className="text-center text-sm text-gray-500 py-8 border-t">
         &copy; {new Date().getFullYear()} Entrega.food. All rights reserved.
+        <div className="mt-4 flex justify-center gap-6">
+          <a href="https://facebook.com/entregafood" target="_blank" className="text-blue-600 hover:underline">Facebook</a>
+          <a href="https://instagram.com/entrega.food" target="_blank" className="text-pink-600 hover:underline">Instagram</a>
+          <a href="https://wa.me/1234567890" target="_blank" className="text-green-600 hover:underline">WhatsApp</a>
+        </div>
+
       </footer>
     </div>
   );
