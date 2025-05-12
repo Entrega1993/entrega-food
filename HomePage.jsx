@@ -7,74 +7,80 @@ export default function HomePage() {
   const t = {
     en: {
       title: "Entrega.food",
-      subtitle: "Entrega.food delivers your favorite meals fast — from trusted local restaurants to your door. Fresh, affordable, and always on time.",
+      subtitle:
+        "Entrega.food delivers your favorite meals fast — from trusted local restaurants to your door. Fresh, affordable, and always on time.",
       orderNow: "Order Now",
       partner: "Partner With Us",
-      driver: "Become a Driver"
+      driver: "Become a Driver",
     },
     es: {
       title: "Entrega.food",
-      subtitle: "Entrega.food entrega tus comidas favoritas rápido — de restaurantes locales confiables hasta tu puerta. Fresco, económico y siempre puntual.",
+      subtitle:
+        "Entrega.food entrega tus comidas favoritas rápidamente, desde restaurantes locales de confianza hasta tu puerta. Fresco, económico y siempre a tiempo.",
       orderNow: "Ordena Ahora",
       partner: "Sé un Socio",
-      driver: "Conviértete en Repartidor"
-    }
+      driver: "Conviértete en Repartidor",
+    },
   };
 
   const tr = t[lang];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <header className="flex items-center justify-between px-6 py-4 border-b">
-        <img src={logo} alt="Entrega.food logo" className="h-10" />
+    <div className="min-h-screen bg-white text-center p-6">
+      <header className="flex flex-col items-center mb-6">
+        <img src={logo} alt="Entrega Logo" className="w-32 h-32 mb-4" />
         <select
           value={lang}
           onChange={(e) => setLang(e.target.value)}
-          className="border px-2 py-1 rounded"
+          className="border border-gray-300 rounded px-3 py-1 text-sm"
         >
           <option value="en">EN</option>
           <option value="es">ES</option>
         </select>
       </header>
 
-      <main className="text-center px-4 py-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">{tr.title}</h1>
-        <p className="text-lg max-w-2xl mx-auto mb-8">{tr.subtitle}</p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <button className="bg-green-600 text-white px-6 py-2 rounded-xl font-semibold shadow">{tr.orderNow}</button>
-          <button className="border border-green-600 text-green-600 px-6 py-2 rounded-xl font-semibold">{tr.partner}</button>
-          <button className="border border-green-600 text-green-600 px-6 py-2 rounded-xl font-semibold">{tr.driver}</button>
+      <main className="max-w-xl mx-auto">
+        <h1 className="text-3xl font-bold mb-4">{tr.title}</h1>
+        <p className="text-lg mb-6">{tr.subtitle}</p>
+
+        <div className="flex flex-wrap gap-4 justify-center mb-6">
+          <a
+            href="#order"
+            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+          >
+            {tr.orderNow}
+          </a>
+          <a
+            href="#partner"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            {tr.partner}
+          </a>
+          <a
+            href="#driver"
+            className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
+          >
+            {tr.driver}
+          </a>
         </div>
+
+        <footer className="text-sm text-gray-500">
+          <p className="mb-2">
+            © 2025 Entrega.food. All rights reserved.
+          </p>
+          <div className="flex gap-3 justify-center">
+            <a href="#" className="hover:underline">
+              Facebook
+            </a>
+            <a href="#" className="hover:underline">
+              Instagram
+            </a>
+            <a href="#" className="hover:underline">
+              WhatsApp
+            </a>
+          </div>
+        </footer>
       </main>
-
-      <footer className="text-center text-sm text-gray-500 py-8 border-t">
-        &copy; {new Date().getFullYear()} Entrega.food. All rights reserved.
-        <div className="mt-4 flex justify-center gap-6">
-          <a href="https://facebook.com/entregafood" target="_blank" className="text-blue-600 hover:underline">Facebook</a>
-          <a href="https://instagram.com/entrega.food" target="_blank" className="text-pink-600 hover:underline">Instagram</a>
-          <a href="https://wa.me/1234567890" target="_blank" className="text-green-600 hover:underline">WhatsApp</a>
-        </div>
-
-      </footer>
     </div>
   );
 }
-<form
-  action="https://formspree.io/f/mdkglrpb"
-  method="POST"
-  style={{ display: "flex", flexDirection: "column", maxWidth: "400px", margin: "30px auto", gap: "10px" }}
->
-  <label>
-    Your Name:
-    <input type="text" name="name" required />
-  </label>
-  <label>
-    Your Email:
-    <input type="email" name="email" required />
-  </label>
-  <label>
-    Message:
-    <textarea name="message" rows="5" required></textarea>
-  </label>
-  <button type="submit">Send</button>
-</form>
