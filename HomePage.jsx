@@ -59,3 +59,22 @@ export default function HomePage() {
     </div>
   );
 }
+<form
+  action="https://formspree.io/f/mdkglrpb"
+  method="POST"
+  style={{ display: "flex", flexDirection: "column", maxWidth: "400px", margin: "30px auto", gap: "10px" }}
+>
+  <label>
+    Your Name:
+    <input type="text" name="name" required />
+  </label>
+  <label>
+    Your Email:
+    <input type="email" name="email" required />
+  </label>
+  <label>
+    Message:
+    <textarea name="message" rows="5" required></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form>
