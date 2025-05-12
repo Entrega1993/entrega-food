@@ -51,10 +51,38 @@ export default function HomePage() {
         <h1>{tr.title}</h1>
         <p>{tr.subtitle}</p>
         <div style={{ margin: "20px 0" }}>
-          <button style={{ margin: "5px" }}>{tr.orderNow}</button>
-          <button style={{ margin: "5px" }}>{tr.partner}</button>
-          <button style={{ margin: "5px" }}>{tr.driver}</button>
-        </div>
+          <button style={{ margin<div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px", margin: "20px 0" }}>
+  <a href="/order" style={{
+    backgroundColor: "#28a745",
+    color: "#fff",
+    padding: "12px 20px",
+    borderRadius: "5px",
+    textDecoration: "none",
+    fontWeight: "bold"
+  }}>
+    {tr.orderNow}
+  </a>
+  <a href="/partner" style={{
+    backgroundColor: "#007bff",
+    color: "#fff",
+    padding: "12px 20px",
+    borderRadius: "5px",
+    textDecoration: "none",
+    fontWeight: "bold"
+  }}>
+    {tr.partner}
+  </a>
+  <a href="/driver" style={{
+    backgroundColor: "#ffc107",
+    color: "#000",
+    padding: "12px 20px",
+    borderRadius: "5px",
+    textDecoration: "none",
+    fontWeight: "bold"
+  }}>
+    {tr.driver}
+  </a>
+</div>
         <select value={lang} onChange={(e) => setLang(e.target.value)}>
           <option value="en">English</option>
           <option value="es">Español</option>
