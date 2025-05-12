@@ -8,9 +8,9 @@ export default function Home() {
       </header>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
-        <a href="#" className="px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 transition">Order Now</a>
-        <a href="#" className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">Partner With Us</a>
-        <a href="#" className="px-6 py-3 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition">Become a Driver</a>
+        <a href="/order" className="px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 transition">Order Now</a>
+        <a href="/partner" className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">Partner With Us</a>
+        <a href="/driver" className="px-6 py-3 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition">Become a Driver</a>
       </div>
 
       <footer className="text-sm text-gray-500">
