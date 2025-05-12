@@ -45,7 +45,12 @@ export default function HomePage() {
   const tr = t[lang];
 
   return (
-    <div style={{ padding: "30px", fontFamily: "Arial, sans-serif" }}>
+ <div style={{
+  padding: "20px",
+  fontFamily: "Arial, sans-serif",
+  maxWidth: "100%",
+  boxSizing: "border-box"
+}}>   
       <header style={{ textAlign: "center" }}>
         <img src={logo} alt="Entrega Logo" style={{ maxWidth: "150px" }} />
         <h1>{tr.title}</h1>
