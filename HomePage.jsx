@@ -84,3 +84,17 @@ export default function HomePage() {
     </div>
   );
 }
+
+<div className="min-h-screen bg-white text-center p-6">
+  <header>...</header>
+
+  <main>...</main>
+
+  {/* Contact form section */}
+  <section className="mt-10" id="contact">
+    <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+    <ContactForm />
+  </section>
+
+  <footer>...</footer>
+</div>
