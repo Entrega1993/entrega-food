@@ -11,7 +11,28 @@ export default function HomePage() {
       orderNow: "Order Now",
       partner: "Partner With Us",
       driver: "Become a Driver",
-    },
+    },<form
+  action="https://formspree.io/f/mdkglrpb"
+  method="POST"
+  style={{ maxWidth: "400px", margin: "30px auto", textAlign: "left" }}
+>
+  <h2>Contact Us</h2>
+  <label>
+    Name:
+    <input type="text" name="name" required style={{ width: "100%", padding: "8px", marginBottom: "10px" }} />
+  </label>
+  <label>
+    Email:
+    <input type="email" name="_replyto" required style={{ width: "100%", padding: "8px", marginBottom: "10px" }} />
+  </label>
+  <label>
+    Message:
+    <textarea name="message" rows="4" required style={{ width: "100%", padding: "8px", marginBottom: "10px" }}></textarea>
+  </label>
+  <button type="submit" style={{ backgroundColor: "#28a745", color: "white", padding: "10px 20px", border: "none", borderRadius: "4px" }}>
+    Send
+  </button>
+</form>
     es: {
       title: "Entrega.food",
       subtitle: "Entrega.food entrega tus comidas favoritas rápido — de restaurantes locales confiables hasta tu puerta. Fresco, económico y siempre a tiempo.",
