@@ -1,55 +1,70 @@
 import Head from 'next/head';
-
-<Head>
-  <title>Entrega.food | Fresh & Fast Meal Delivery</title>
-  <meta name="description" content="Entrega.food delivers meals from local restaurants in Canada – affordable, fast, and always on time." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.entrega.food/" />
-</Head>
-import Head from 'next/head';
 import React, { useState } from 'react';
 import logo from './logo.png';
 
 export default function HomePage() {
   const [lang, setLang] = useState('en');
+
   const t = {
     en: {
-      title: "Entrega.food",
-      subtitle: "Entrega.food delivers your favorite meals fast — from trusted local restaurants to your door. Fresh, affordable, and always on time.",
-      orderNow: "Order Now",
-      partner: "Partner With Us",
-      driver: "Become a Driver"
+      title: 'Entrega.food | Fresh & Local',
+      subtitle: 'Entrega.food delivers your favorite meals fast — from trusted local restaurants to your door. Fresh, affordable, and always on time.',
+      orderNow: 'Order Now',
+      partner: 'Partner With Us',
+      driver: 'Become a Driver',
     },
     es: {
-      title: "Entrega.food",
-      subtitle: "Entrega.food entrega tus comidas favoritas rápidamente — de restaurantes locales de confianza a tu puerta. Fresco, económico y siempre puntual.",
-      orderNow: "Ordena Ahora",
-      partner: "Sé un Socio",
-      driver: "Conviértete en Conductor"
-    }
+      title: 'Entrega.food | Comida Rápida y Local',
+      subtitle: 'Entrega.food entrega tus comidas favoritas — desde restaurantes locales directamente a tu puerta. Fresco, económico y siempre a tiempo.',
+      orderNow: 'Ordena Ahora',
+      partner: 'Sé un Socio',
+      driver: 'Conviértete en Repartidor',
+    },
   };
+
   const tr = t[lang];
 
   return (
-    <div>
+    <>
       <Head>
         <title>{tr.title}</title>
         <meta name="description" content={tr.subtitle} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.entrega.food" />
       </Head>
-      <header>
-        <img src={logo} alt="Entrega.food Logo" width="120" />
-        <select value={lang} onChange={(e) => setLang(e.target.value)}>
-          <option value="en">EN</option>
-          <option value="es">ES</option>
-        </select>
-      </header>
-      <main>
+
+      <div style={{ textAlign: 'center', padding: '2rem', fontFamily: 'Arial' }}>
+        <header>
+          <img src={logo.src} alt="Entrega.food logo" style={{ width: 120 }} />
+          <select value={lang} onChange={(e) => setLang(e.target.value)} style={{ marginTop: 10 }}>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </header>
+
         <h1>{tr.title}</h1>
-        <p>{tr.subtitle}</p>
-        <button>{tr.orderNow}</button>
-        <button>{tr.partner}</button>
-        <button>{tr.driver}</button>
-      </main>
-    </div>
+        <p style={{ maxWidth: 600, margin: 'auto' }}>{tr.subtitle}</p>
+
+        <div style={{ marginTop: 20 }}>
+          <a href="/order" style={buttonStyle}>{tr.orderNow}</a>
+          <a href="/partner" style={buttonStyle}>{tr.partner}</a>
+          <a href="/driver" style={buttonStyle}>{tr.driver}</a>
+        </div>
+
+        <footer style={{ marginTop: 30 }}>
+          <p>&copy; 2025 Entrega.food. All rights reserved.</p>
+        </footer>
+      </div>
+    </>
   );
-}   
+}
+
+const buttonStyle = {
+  display: 'inline-block',
+  margin: '0 10px',
+  padding: '10px 20px',
+  background: '#d32f2f',
+  color: '#fff',
+  borderRadius: '4px',
+  textDecoration: 'none',
+};
