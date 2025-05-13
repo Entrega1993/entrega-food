@@ -1,4 +1,12 @@
 import Head from 'next/head';
+
+<Head>
+  <title>Entrega.food | Fresh & Fast Meal Delivery</title>
+  <meta name="description" content="Entrega.food delivers meals from local restaurants in Canada – affordable, fast, and always on time." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.entrega.food/" />
+</Head>
+import Head from 'next/head';
 import React, { useState } from 'react';
 import logo from './logo.png';
 
