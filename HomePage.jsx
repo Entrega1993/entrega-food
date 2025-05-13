@@ -45,6 +45,7 @@ export default function HomePage() {
   const tr = t[lang];
 
   return (
+    {metaTags}
  <div style={{
   padding: "20px",
   fontFamily: "Arial, sans-serif",
